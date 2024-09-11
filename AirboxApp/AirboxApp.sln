@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirboxApp", "AirboxApp\AirboxApp.csproj", "{F60912C6-23D6-4D93-BE7E-40D00EF465B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirboxApp", "AirboxApp\AirboxApp.csproj", "{F60912C6-23D6-4D93-BE7E-40D00EF465B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitTests", "xUnitTests\xUnitTests.csproj", "{B4C447A9-E056-4F91-807C-ACE9EEC78D82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{F60912C6-23D6-4D93-BE7E-40D00EF465B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F60912C6-23D6-4D93-BE7E-40D00EF465B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F60912C6-23D6-4D93-BE7E-40D00EF465B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B4C447A9-E056-4F91-807C-ACE9EEC78D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C447A9-E056-4F91-807C-ACE9EEC78D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C447A9-E056-4F91-807C-ACE9EEC78D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C447A9-E056-4F91-807C-ACE9EEC78D82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,13 @@
+
 namespace AirboxApp.Views;
 
 public partial class FullScreenImage : CommunityToolkit.Maui.Views.Popup
 {
-	public FullScreenImage()
+    #region Constructor
+    public FullScreenImage()
 	{
 		InitializeComponent();
 	}
+    #endregion    
+
 }

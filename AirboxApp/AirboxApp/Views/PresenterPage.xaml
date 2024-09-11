@@ -48,7 +48,7 @@
 
             <CarouselView.ItemTemplate>
                 <DataTemplate >
-                    <Image Source="{Binding Image}"
+                    <Image Source="{Binding Image}"                           
                            x:DataType="models:VehicleImage"
                            Aspect="AspectFit">
                         <Image.GestureRecognizers>

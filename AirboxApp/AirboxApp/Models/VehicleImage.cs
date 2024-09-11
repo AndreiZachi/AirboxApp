@@ -10,9 +10,9 @@ namespace AirboxApp.Models
     public class VehicleImage : BaseModel
     {
         #region Properties
-        public ImageSource? Image { get; set; }
-        
+        public ImageSource? Image { get; set; }        
         public Guid Id { get; set; }
+        public string Name { get; set; }
         #endregion
     }
 }

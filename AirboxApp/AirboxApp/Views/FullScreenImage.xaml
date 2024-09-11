@@ -5,6 +5,7 @@
                xmlns:viewmodels="clr-namespace:AirboxApp.ViewModels"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
+               
                x:Class="AirboxApp.Views.FullScreenImage">
 
     <toolkit:Popup.BindingContext>
