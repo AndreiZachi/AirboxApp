@@ -8,3 +8,7 @@ AirboxApp/AirboxApp/obj/
 AirboxApp/AirboxApp/Platforms/MacCatalyst/
 
 AirboxApp/AirboxApp/Platforms/Tizen/
+
+AirboxApp/xUnitTests/bin/
+
+AirboxApp/xUnitTests/obj/
