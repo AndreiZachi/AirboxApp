@@ -57,6 +57,66 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\Boats\istockphoto-1323901813-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Boats\istockphoto-1329335620-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Boats\istockphoto-1412049078-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Boats\istockphoto-513066371-1024x1024.jpg" />
+	  <None Remove="Resources\Images\Boats\preview16 %281%29.jpg" />
+	  <None Remove="Resources\Images\Boats\preview16.jpg" />
+	  <None Remove="Resources\Images\Cars\ezra-mckenna-2HjR14eUCGI-unsplash.jpg" />
+	  <None Remove="Resources\Images\Cars\ezra-mckenna-v1uAa5hkNgs-unsplash.jpg" />
+	  <None Remove="Resources\Images\Cars\michael-fousert-F7_VwgErZwY-unsplash.jpg" />
+	  <None Remove="Resources\Images\Cars\severin-demchuk-DOfQHZVe68s-unsplash.jpg" />
+	  <None Remove="Resources\Images\Cars\taneli-lahtinen-qy5sq8-ymps-unsplash.jpg" />
+	  <None Remove="Resources\Images\Cars\vitali-adutskevich-E3LYDkG8M34-unsplash.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-160083788-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-1679667035-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-172316338-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-182764376-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-184091657-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-2155824159-2048x2048.jpg" />
+	  <None Remove="Resources\Images\Helicopters\istockphoto-2158879926-2048x2048.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\Cars\taneli-lahtinen-qy5sq8-ymps-unsplash.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\Boats\istockphoto-1323901813-2048x2048.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Boats\istockphoto-1329335620-2048x2048.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Boats\istockphoto-1412049078-2048x2048.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Boats\istockphoto-513066371-1024x1024.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Boats\preview16 (1).jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Boats\preview16.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Images\Cars\ezra-mckenna-2HjR14eUCGI-unsplash.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Cars\ezra-mckenna-v1uAa5hkNgs-unsplash.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Cars\michael-fousert-F7_VwgErZwY-unsplash.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Cars\severin-demchuk-DOfQHZVe68s-unsplash.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Cars\vitali-adutskevich-E3LYDkG8M34-unsplash.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-160083788-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-1679667035-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-172316338-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-182764376-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-184091657-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-2155824159-2048x2048.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Helicopters\istockphoto-2158879926-2048x2048.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -66,6 +126,10 @@
 	  <MauiXaml Update="Views\PresenterPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Models\" />
 	</ItemGroup>
 
 </Project>

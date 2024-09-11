@@ -3,42 +3,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AirboxApp.Views.PresenterPage"
              xmlns:enums="clr-namespace:AirboxApp.Enums"
+             xmlns:models="clr-namespace:AirboxApp.Models"
              xmlns:vm="clr-namespace:AirboxApp.ViewModels"
              Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:PresenterViewModel/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout Padding="10">
-        <Grid RowSpacing="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Text="Cars" 
+
+    <Grid RowSpacing="5"
+              Padding="10"
+              BackgroundColor="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Text="Cars" 
                     Grid.Column="1"
                     Command="{Binding ChangeImageSet}" 
                     CommandParameter="{x:Static enums:ImageSetType.CarType}"/>
-            <Button Text="Helicopters" 
+        <Button Text="Helicopters" 
                     Grid.Column="1"
                     Grid.Row="1"
                     Command="{Binding ChangeImageSet}" 
                     CommandParameter="{x:Static enums:ImageSetType.HelicopterType}"/>
-            <Button Text="Boats" 
+        <Button Text="Boats" 
                     Grid.Column="1"
                     Grid.Row="2"
                     Command="{Binding ChangeImageSet}" 
                     CommandParameter="{x:Static enums:ImageSetType.BoatType}"/>
 
-            <CarouselView ItemsSource="{Binding SelectedSet}"
+        <CarouselView ItemsSource="{Binding SelectedSet}"
+                       
+                          BackgroundColor="Pink"
                           Grid.Row="3"
-                          Grid.ColumnSpan="3"/>
-        </Grid>
-    </VerticalStackLayout>
+                          Grid.ColumnSpan="3">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate >
+                    <Image Source="{Binding .}"
+                           x:DataType="ImageSource"
+                           Aspect="AspectFit"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </Grid>
 </ContentPage>
