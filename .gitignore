@@ -1,0 +1,10 @@
+
+AirboxApp/.vs/
+
+AirboxApp/AirboxApp/bin/
+
+AirboxApp/AirboxApp/obj/
+
+AirboxApp/AirboxApp/Platforms/MacCatalyst/
+
+AirboxApp/AirboxApp/Platforms/Tizen/
