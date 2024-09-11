@@ -1,18 +1,18 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirboxApp.ViewModels
+namespace AirboxApp.Models
 {
-    public partial class BaseViewModel : ObservableObject
+    public class VehicleImage : BaseModel
     {
         #region Properties
-        [ObservableProperty]
-        public string title = "";
+        public ImageSource? Image { get; set; }
+        
+        public Guid Id { get; set; }
         #endregion
     }
 }

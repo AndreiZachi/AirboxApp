@@ -4,15 +4,16 @@
              x:Class="AirboxApp.Views.PresenterPage"
              xmlns:enums="clr-namespace:AirboxApp.Enums"
              xmlns:models="clr-namespace:AirboxApp.Models"
+             x:Name="PresenterRef"
              xmlns:vm="clr-namespace:AirboxApp.ViewModels"
+
              Title="{Binding Title}">
     <ContentPage.BindingContext>
         <vm:PresenterViewModel/>
     </ContentPage.BindingContext>
 
     <Grid RowSpacing="5"
-              Padding="10"
-              BackgroundColor="Green">
+              Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -47,9 +48,13 @@
 
             <CarouselView.ItemTemplate>
                 <DataTemplate >
-                    <Image Source="{Binding .}"
-                           x:DataType="ImageSource"
-                           Aspect="AspectFit"/>
+                    <Image Source="{Binding Image}"
+                           x:DataType="models:VehicleImage"
+                           Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.ShowImageFullScreen, Source={x:Reference PresenterRef}}" CommandParameter="{Binding Id}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>

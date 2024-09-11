@@ -11,49 +11,74 @@ namespace AirboxApp.Manager
 {
     public class ImageManager
     {
-        public ObservableCollection<ImageSource> GetBoats()
+
+
+        #region Methods
+        public ObservableCollection<VehicleImage> GetBoats()
         {
-            ObservableCollection<ImageSource>? vehicleSet = new ObservableCollection<ImageSource>();
+            ObservableCollection<VehicleImage> vehicleSet = new ObservableCollection<VehicleImage>();
+
 
             var assemblyResourcesNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-            foreach(var resource in assemblyResourcesNames)
+            int i = 0;
+            foreach (var resource in assemblyResourcesNames)
             {
                 if (resource.Contains("Images.Boats"))
                 {
-                    vehicleSet.Add(ImageSource.FromResource(resource));
+                    vehicleSet.Add(new VehicleImage { Image = ImageSource.FromResource(resource), Id = Guid.NewGuid() });
                 }
+                if (i == 8)
+                {
+                    return vehicleSet;
+                }
+                i++;
+
             }
             return vehicleSet;
         }
 
-        public ObservableCollection<ImageSource> GetCars()
+        public ObservableCollection<VehicleImage> GetCars()
         {
-            ObservableCollection<ImageSource>? vehicleSet = new ObservableCollection<ImageSource>();
+            ObservableCollection<VehicleImage> vehicleSet = new ObservableCollection<VehicleImage>();
 
             var assemblyResourcesNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            int i = 0;
             foreach (var resource in assemblyResourcesNames)
             {
                 if (resource.Contains("Images.Cars"))
                 {
-                    vehicleSet.Add(ImageSource.FromResource(resource));
+                    vehicleSet.Add(new VehicleImage { Image = ImageSource.FromResource(resource), Id = Guid.NewGuid() });
                 }
+                if (i == 8)
+                {
+                    return vehicleSet;
+                }
+                i++;
+
             }
             return vehicleSet;
         }
 
-        public ObservableCollection<ImageSource> GetHelicopters()
+        public ObservableCollection<VehicleImage> GetHelicopters()
         {
-            ObservableCollection<ImageSource>? vehicleSet = new ObservableCollection<ImageSource>();
+            ObservableCollection<VehicleImage> vehicleSet = new ObservableCollection<VehicleImage>();
 
             var assemblyResourcesNames = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+            int i = 0;
             foreach (var resource in assemblyResourcesNames)
             {
                 if (resource.Contains("Images.Helicopters"))
                 {
-                    vehicleSet.Add(ImageSource.FromResource(resource));
+                    vehicleSet.Add(new VehicleImage { Image = ImageSource.FromResource(resource), Id = Guid.NewGuid() });
                 }
+                if (i == 8)
+                {
+                    return vehicleSet;
+                }
+                i++;
             }
             return vehicleSet;
         }
+        #endregion
     }
 }

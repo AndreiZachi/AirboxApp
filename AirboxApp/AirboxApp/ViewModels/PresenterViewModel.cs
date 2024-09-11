@@ -1,6 +1,9 @@
 ﻿using AirboxApp.Enums;
 using AirboxApp.Manager;
 using AirboxApp.Models;
+using AirboxApp.Views;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -17,13 +20,13 @@ namespace AirboxApp.ViewModels
 
         #region Properties
         [ObservableProperty]
-        public ObservableCollection<ImageSource> cars;
+        public ObservableCollection<VehicleImage> cars;
         [ObservableProperty]
-        public ObservableCollection<ImageSource> helicopters;
+        public ObservableCollection<VehicleImage> helicopters;
         [ObservableProperty]
-        public ObservableCollection<ImageSource> boats;
+        public ObservableCollection<VehicleImage> boats;
         [ObservableProperty]
-        public ObservableCollection<ImageSource> selectedSet;
+        public ObservableCollection<VehicleImage> selectedSet;
         #endregion
 
         #region Constructor
@@ -31,6 +34,7 @@ namespace AirboxApp.ViewModels
         {
             Title = "Image Presenter";
             PopulateImageSets();
+            
         }
         #endregion
 
@@ -67,8 +71,20 @@ namespace AirboxApp.ViewModels
 
             if (SelectedSet == null)
             {
-                SelectedSet = new ObservableCollection<ImageSource>();
+                SelectedSet = new ObservableCollection<VehicleImage>();
             }
+        });
+
+        public Command ShowImageFullScreen => new Command(async(sender) =>
+        {
+            var image = SelectedSet.FirstOrDefault(w => w.Id == (Guid)sender);
+            Page page = Application.Current?.MainPage ?? throw new NullReferenceException();
+            var pop = new FullScreenImage();
+
+            var vm = pop.BindingContext as FullScreenImageViewModel;
+            vm.FullScreenImage = image?.Image;
+            vm.BackPressed = new Command(async() => { await pop.CloseAsync(); });
+            await page.ShowPopupAsync<FullScreenImage>(pop);
         });
 
         #endregion
